@@ -1,0 +1,21 @@
+def move_camera(image_size, spatial_coords, image_coords, instructions):
+    return None
+
+if __name__ == '__main__':
+    spat_coords = [-300.0, 200.0, 3000.0]
+    im_coords = [20, 440]
+    im_size = [640, 480]
+    
+    instructions = [['x', 180], ] #unacceptable move
+    assert move(im_size, spat_coords, im_coords, instructions) == [20, 440]
+     
+    instructions = [['z', 360], [0, 0, -1000]]
+    assert move(im_size, spat_coords, im_coords, instructions) == [95, 390]
+     
+    instructions = [['z', 360], ['y', 360], [0, 0, 100]]
+    assert move(im_size, spat_coords, im_coords, instructions) == [10, 447]
+    
+    instructions = [[-100, 100, 0], ['z', 180]]
+    assert move(im_size, spat_coords, im_coords, instructions) == [519, 139]
+
+    print('Everything looks good now. It is time to click "Check"')

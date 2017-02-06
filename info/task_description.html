@@ -1,0 +1,37 @@
+<p>
+You have a camera at the basic position (point [0, 0, 0]) headed straight in the direction of an axis (say z). There is an object with real coordinates (input parameter [x_r, y_r, z_r]) with image coordinates (also possible input [x_m, y_m], see Technical analysis below). The director is not happy with the view of the object in the image and give you instructions to move or rotate the camera (this is covered by the input list of instructions). You should reject the instructions that would lead to getting the camera behind the object (you can only shoot in the front of the camera) or projecting the object outside the image (image size would be fixed or another input parameter). The output of the function is the final object image coordinates.
+</p>
+<p>
+    <strong>Input: </strong>4 arguments: Image Size, Spatial Coordinates, Image Coordinates, Instructions.  <i>should be explaind with a bit more details.</i>
+</p>
+
+<p>
+    <strong>Output: </strong> Final coordinates.
+</p>
+
+
+
+<div class="for_info_only">
+    <p>
+        <strong>Example:</strong>
+    </p>
+<pre class="brush: python">
+move_camera(
+    [640, 480],
+    [-300.0, 200.0, 3000.0],
+    [20, 440],
+    [['x', 180], ]
+) == [20, 440]
+
+move_camera(
+    [640, 480],
+    [-300.0, 200.0, 3000.0],
+    [20, 440],
+    [['z', 360], [0, 0, -1000]]
+) == [95, 390]
+</div>
+
+<p>
+    <strong>Precondition:</strong>
+    <i>Constraints for Input</i>
+</p>
